@@ -1,0 +1,260 @@
+.main-Container{
+    background-color: rgb(45, 43, 43);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.content-Container{
+    height: 600px;
+    width: 95%;
+    background-color: darkred;
+    border-radius: 10px;
+    margin-top: 50px;
+    display:grid;
+    grid-template-columns: auto 2fr 2fr 2fr;
+    grid-template-rows: 2fr 2fr 2fr;
+}
+.current-Container{
+    width: 275px;
+    height: 550px;
+    background-color: rgb(9, 9, 49);
+    border-radius: 10px;
+    grid-row:1/ 3;
+    grid-column: 1/2;
+}
+.upper-Tab{
+    width: 275px;
+    height: 305px;
+    border-radius: 10px;
+    background-color: rgb(30, 83, 182);
+    display: flex;
+    justify-content: center;
+}
+.input-Container{
+    margin-top: 20px;
+}
+.user-Input{
+    background-color: rgba(146, 145, 145, 0.803);
+    width: 185px;
+    margin-right: 10px;
+}
+.input-Btn{
+    background-color: rgb(146, 145, 145, 0.803);
+    color: white;
+}
+.favorites-Container{
+   margin-left: 195px;
+}
+.star-logo{
+    width: 40px;
+}
+.text-Container{
+    margin-top: 50px;
+}
+.text-Container p{
+    color: white;
+    font-size: 12px;
+}
+.text-Container h3{
+    color: white;
+    font-size: 30px;
+    font-weight: 100;
+}
+.city2-Container{
+    display: flex;
+    justify-content: flex-start;
+    color: rgb(18, 59, 135);
+    margin-top: 60px;
+}
+.city3-Container{
+    display: flex;
+    justify-content: flex-start;
+    color: rgb(18, 59, 135);
+}
+.city4-Container{
+    display: flex;
+    justify-content: flex-start;
+    color: rgb(18, 59, 135);
+}
+.city5-Container{
+    display: flex;
+    justify-content: flex-start;
+    color: rgb(18, 59, 135);
+}
+.favs-Text{
+    color: white;
+}
+.lower-Tab{
+    margin-left: 20px;
+}
+
+/* Today-Card----------------------------------------- */
+
+.today-Container {
+    height: 240px;
+    width: 100%;
+    background-color: rgb(220, 119, 82);
+    grid-row: 1;
+    grid-column: 2/3;
+    margin-top: 22%;
+    border-radius: 10px;
+    }
+  
+  
+  .today-Card {
+    background-color: rgb(12, 12, 65);
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 50px;
+    transition: color 0.3s ease;
+  }
+  .today-Contents {
+    display: flex;
+    justify-content: space-between;
+  }
+  .today-Card:hover {
+    background-color: rgb(42, 42, 123);
+  }
+
+  .day1-Container {
+    height: 240px;
+    width: 100%;
+    background-color: rgb(220, 119, 82);
+    grid-row: 1;
+    grid-column: 3/4;
+    margin-top: 22%;
+    border-radius: 10px;
+    }
+  
+  
+  .day1-Card {
+    background-color: rgb(12, 12, 65);
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 50px;
+    transition: color 0.3s ease;
+  }
+  .day1-Contents {
+    display: flex;
+    justify-content: space-between;
+  }
+  .day1-Card:hover {
+    background-color: rgb(42, 42, 123);
+  }
+
+  .day2-Container {
+    height: 240px;
+    width: 100%;
+    background-color: rgb(220, 119, 82);
+    grid-row: 1/ 2;
+    grid-column: 4/5;
+    margin-top: 22%;
+    border-radius: 10px;
+    }
+  
+  
+  .day2-Card {
+    background-color: rgb(12, 12, 65);
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 50px;
+    transition: color 0.3s ease;
+  }
+  .day2-Contents {
+    display: flex;
+    justify-content: space-between;
+  }
+  .day2-Card:hover {
+    background-color: rgb(42, 42, 123);
+  }
+
+  .day3-Container {
+    height: 240px;
+    width: 100%;
+    background-color: rgb(220, 119, 82);
+    grid-row: 2;
+    grid-column: 2/3;
+    margin-top: 22%;
+    border-radius: 10px;
+    }
+  
+  
+  .day3-Card {
+    background-color: rgb(12, 12, 65);
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 50px;
+    transition: color 0.3s ease;
+  }
+  .day3-Contents {
+    display: flex;
+    justify-content: space-between;
+  }
+  .day3-Card:hover {
+    background-color: rgb(42, 42, 123);
+  }
+
+  .day4-Container {
+    height: 240px;
+    width: 100%;
+    background-color: rgb(220, 119, 82);
+    grid-row: 2/ 3;
+    grid-column: 3/4;
+    margin-top: 22%;
+    border-radius: 10px;
+    }
+  
+  
+  .day4-Card {
+    background-color: rgb(12, 12, 65);
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 50px;
+    transition: color 0.3s ease;
+  }
+  .day4-Contents {
+    display: flex;
+    justify-content: space-between;
+  }
+  .day4-Card:hover {
+    background-color: rgb(42, 42, 123);
+  }
+
+
+
+
+  .day5-Container {
+    height: 240px;
+    width: 100%;
+    background-color: rgb(220, 119, 82);
+    grid-row: 2;
+    grid-column: 4/5;
+    margin-top: 22%;
+    border-radius: 10px;
+    }
+  
+  
+  .day5-Card {
+    background-color: rgb(12, 12, 65);
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 50px;
+    transition: color 0.3s ease;
+  }
+  .day5-Contents {
+    display: flex;
+    justify-content: space-between;
+  }
+  .day5-Card:hover {
+    background-color: rgb(42, 42, 123);
+  }
+  .lower-Tab{
+    grid-row: 2;
+    grid-column: 1/2;
+  }
