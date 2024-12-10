@@ -33,6 +33,15 @@
     display: flex;
     justify-content: center;
 }
+.current-Text{
+    margin: 0;
+}
+.current-Text1{
+    margin: 0;
+}
+.current-CityTxt{
+    padding-bottom: 30px;
+}
 .input-Container{
     margin-top: 20px;
 }
