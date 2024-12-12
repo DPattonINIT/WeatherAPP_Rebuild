@@ -3,13 +3,18 @@
 const DarrylKey = '2a81aae1fd6131a7dd0e3509c4a72374';
 let userInput = document.getElementById('userInput');
 let searchBtn = document.getElementById('searchBtn');
-
 let currentCity = document.getElementById('currentCity');
 let currentTemperature = document.getElementById('currentTemperature');
+
+
 let currentData = "";
 let weekData = "";
 let userLocation = "";
 
+async  function retrieveData(){
+    userLocation = userInput.value.trim();
+
+}
 
 
 
@@ -20,13 +25,6 @@ let userLocation = "";
 
 
 
-
-// searchBtn.addEventListener('click', function(){
-//     console.log("working")
-// let userInput = document.getElementById('userInput').value
-// currentCity.innerText = currentData.name
-// currentTemperature.innerText = currentData.main.temp + "°F"
-// });
 
 
 
