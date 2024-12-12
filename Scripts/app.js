@@ -1,6 +1,5 @@
-// import { DarrylKey } from "./APIKey";
+import { DarrylKey } from "./APIKey.js";
 
-const DarrylKey = '2a81aae1fd6131a7dd0e3509c4a72374';
 
 
 // Current weather Section-----------------------------------------------------------------------------------------------------------
@@ -20,6 +19,32 @@ let todayWind = document.getElementById('todayWind');
 let todayPrec = document.getElementById('todayPrec');
 let today2date = document.getElementById('today2date');
 
+
+// function getGeolocation() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(
+//             function(position) {
+//                 const lat = position.coords.latitude;
+//                 const lon = position.coords.longitude;
+                
+                
+//                 currentData(lat, lon);
+//                 weeklyData(lat, lon);
+//             },
+//             function(error) {
+//                 console.error(error);
+//                 alert("Geolocation is not available or permission was denied.");
+//             }
+//         );
+//     } else {
+//         alert("Geolocation is not supported by this browser.");
+//     }
+// }
+// window.onload = function() {
+//     getGeolocation();
+// };
+            
+        
 
 
 
