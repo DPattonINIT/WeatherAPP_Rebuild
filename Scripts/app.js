@@ -1,6 +1,6 @@
-import { DarrylKey } from "../APIKey";
+// import { DarrylKey } from "./APIKey";
 
-
+const DarrylKey = '2a81aae1fd6131a7dd0e3509c4a72374';
 let userInput = document.getElementById('userInput');
 let searchBtn = document.getElementById('searchBtn');
 
@@ -12,14 +12,6 @@ let userLocation = "";
 
 
 
-async function retrieveData() {
-    userLocation = userInput.value.trim();
-
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${DarrylKey}&units=imperial`);
-    const data = await response.json();
-    console.log(userLocation);
-}
-retrieveData();
 
 
 
