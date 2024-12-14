@@ -101,6 +101,15 @@
     grid-column: 1/2;
     margin-top: 30px;
 }
+#favoriteList{
+    color: white;
+}
+.btn-close {
+    font-size: 10px; 
+   
+   
+}
+
 
 
 /* Today-Card----------------------------------------- */

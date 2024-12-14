@@ -1,6 +1,5 @@
 import { DarrylKey } from "./APIKey.js";
-
-
+// import { saveToLocalStorage,getFromLocalStorage } from "./localStorage.js";
 
 
 // Current weather Section-----------------------------------------------------------------------------------------------------------
@@ -19,33 +18,127 @@ let todayLow = document.getElementById('todayLow');
 let todayWind = document.getElementById('todayWind');
 let todayPrec = document.getElementById('todayPrec');
 let today2date = document.getElementById('today2date');
+let localStorageBtn = document.getElementById('localStorageBtn');
+let userFav = document.getElementById('userFav');
+const favCity2 = document.getElementById('favCity2');
+const favCity3 = document.getElementById('favCity3');
+const favCity4 = document.getElementById('favCity4');
+const favCity5 = document.getElementById('favCity5');
+let favoriteList = document.getElementById('favoriteList');
 
 
-// function getGeolocation() {
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(
-//             function(position) {
-//                 const lat = position.coords.latitude;
-//                 const lon = position.coords.longitude;
+
+
+
+
+function getGeolocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
                 
                 
-//                 currentData(lat, lon);
-//                 weeklyData(lat, lon);
-//             },
-//             function(error) {
-//                 console.error(error);
-//                 alert("Geolocation is not available or permission was denied.");
-//             }
-//         );
-//     } else {
-//         alert("Geolocation is not supported by this browser.");
-//     }
-// }
-// window.onload = function() {
-//     getGeolocation();
-// };
-            
+                currentData(lat, lon);
+                weeklyData(lat, lon);
+            },
+            function(error) {
+                console.error(error);
+                alert("Geolocation is not available");
+            }
+    
+        );
+    }}
+
+       
+
+
+
+
+
+function saveToLocalStorage(name){
+    let nameArr = getFromLocalStorage();
+    if (nameArr.length >= 5) {
+        alert("You can only save 5 cities as favorites.");
+        return;
+    }
+
+    if (name && !nameArr.includes(name)) {
+        nameArr.push(name)};
+localStorage.setItem('city', JSON.stringify(nameArr))
+}
+
+
+
+function getFromLocalStorage(){
+    let saveToLocalStorageData = localStorage.getItem('city')
+
+    if(saveToLocalStorageData == null){
+
+        return [];
+    }
+      return JSON.parse(saveToLocalStorageData);     
+}
+
+
+
+
+function removeFromLocalStorage(city){
+
+    let localStorageData = getFromLocalStorage();
+    let cityIndex = localStorageData.indexOf(city);
+
+    localStorageData.splice(cityIndex, 1);
+    localStorage.setItem('city', JSON.stringify(localStorageData));
+};
+
+
+
+
+
+
+function createElements(){
+    let cityNames = getFromLocalStorage();
+    favoriteList.innerHTML = '';
+    console.log(cityNames);
+
+    cityNames.map( city =>{
+        console.log(city)
         
+
+        let p = document.createElement('p');
+        p.innerText = city;
+    
+        let removeBtn = document.createElement('button')
+        removeBtn.type = 'button';
+        removeBtn.className = "btn-close";
+        removeBtn.addEventListener('click', function(){
+            removeFromLocalStorage(city)
+            p.remove();
+           
+        })
+        p.appendChild(removeBtn);
+        favoriteList.appendChild(p)
+       
+        
+        
+    })
+}
+
+window.onload = function () {
+    createElements();  
+    getGeolocation();
+};
+
+localStorageBtn.addEventListener('click', function(){
+    let userLocation = userInput.value;
+    saveToLocalStorage(userLocation);
+    createElements()
+});
+
+
+
+
 
 
 
@@ -61,7 +154,7 @@ function getCurrentDate() {
 }
 
 
-async function currentData(){
+async function currentData(city){
     userLocation = userInput.value.trim().toLowerCase();
     
 
@@ -135,7 +228,7 @@ function getDayOfWeek(timestamp) {
 
 
 // Function to access weekly API, 
-async function weeklyData(){
+async function weeklyData(city){
     userLocation = userInput.value.trim().toLowerCase();
     const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${userLocation}&appid=${DarrylKey}&units=imperial`);
     const data = await response.json();
